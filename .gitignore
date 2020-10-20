@@ -99,3 +99,4 @@ woocommerce.css
 *.swp
 *.vi
 *~
+package-lock.json
