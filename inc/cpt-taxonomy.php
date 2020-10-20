@@ -155,7 +155,7 @@ $labels = array(
     'update_item'       => __( 'Update Weekly Recipe' ),
     'add_new_item'      => __( 'Add New Weekly Recipe' ),
     'new_item_name'     => __( 'New Weekly Recipe Name' ),
-    'menu_name'         => __( 'Weekly Recipe' ),
+    'menu_name'         => __( 'Weekly Recipes' ),
 );
 
 $args = array(
