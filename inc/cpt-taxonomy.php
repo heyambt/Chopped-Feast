@@ -100,7 +100,7 @@ function md_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-archive',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
-        'template'           => array( array( 'core/paragraph' ), array( 'core/button' )),
+        'template'           => array( array( 'core/image' ), array( 'core/paragraph' )),
         'template_lock'      => 'all',
     );
 
