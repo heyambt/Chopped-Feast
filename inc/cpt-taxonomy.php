@@ -1,5 +1,5 @@
 <?php
-function ms_register_custom_post_types() {
+function md_register_custom_post_types() {
     
     
     //register Testimonials CPT
@@ -107,10 +107,10 @@ function ms_register_custom_post_types() {
     register_post_type( 'abc-recipes', $args );
 
 }
-add_action( 'init', 'ms_register_custom_post_types' );
+add_action( 'init', 'md_register_custom_post_types' );
 
 //register taxonomies
-function ms_register_taxonomies() {
+function md_register_taxonomies() {
     // register Special Diet taxonomy
     $labels = array(
         'name'              => _x( 'Special Diets', 'taxonomy general name' ),
@@ -169,16 +169,16 @@ $args = array(
 
 register_taxonomy( 'weekly-recipes', array( 'abc-recipes' ), $args );
 }
-add_action( 'init', 'ms_register_taxonomies');
+add_action( 'init', 'md_register_taxonomies');
 
 
 
 
 //this flushes rewrites after enabling the theme
 // we still have to save changes on permalinks while developing
-function ms_rewrite_flush() {
-    ms_register_custom_post_types();
-    ms_register_taxonomies();
+function md_rewrite_flush() {
+    md_register_custom_post_types();
+    md_register_taxonomies();
     flush_rewrite_rules();
 }
-add_action( 'after_switch_theme', 'ms_rewrite_flush' );
+add_action( 'after_switch_theme', 'md_rewrite_flush' );
