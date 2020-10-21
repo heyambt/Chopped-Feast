@@ -20,22 +20,20 @@ get_header();
 		</header><!-- .page-header -->
 		<?php
 		  $args = array(
-			'post_type'      => 'md-recipes',
-			'posts_per_page' => -1,
-			
-			),
-		);
+			'post_type' => 'md-recipes',
+			'post_per_page' => -1,
+		 );
 		$query = new WP_Query( $args );
-
+	
 		if ( $query->have_posts() ) {
-			while( $query->have_posts() ){
+			while( $query->have_posts() ) {
 				$query->the_post();
 				echo '<article class="recipes-items">';
 				echo '<a href="';
 				the_permalink();
 				echo '">';
 				the_title();
-				the_post_thumbnail('medium');
+				echo the_post_thumbnail('medium');
 				echo '</a>';
 				the_excerpt();
 				echo '</article>';
