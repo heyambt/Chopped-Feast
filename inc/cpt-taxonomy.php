@@ -52,7 +52,7 @@ function md_register_custom_post_types() {
         'template_lock'      => 'all',
     );
 
-    register_post_type( 'abc-testimonials', $args );
+    register_post_type( 'md-testimonials', $args );
     
 // register recipes cpt
 
@@ -104,7 +104,7 @@ function md_register_custom_post_types() {
         'template_lock'      => 'all',
     );
 
-    register_post_type( 'abc-recipes', $args );
+    register_post_type( 'md-recipes', $args );
 
 }
 add_action( 'init', 'md_register_custom_post_types' );
@@ -137,7 +137,7 @@ function md_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'special-diets' ),
     );
-    register_taxonomy( 'special-diets', array( 'abc-recipes' ), $args );
+    register_taxonomy( 'special-diets', array( 'md-recipes' ), $args );
 
      
 
@@ -167,7 +167,7 @@ $args = array(
     'rewrite'           => array( 'slug' => 'weekly-recipes' ),
 );
 
-register_taxonomy( 'weekly-recipes', array( 'abc-recipes' ), $args );
+register_taxonomy( 'weekly-recipes', array( 'md-recipes' ), $args );
 }
 add_action( 'init', 'md_register_taxonomies');
 
