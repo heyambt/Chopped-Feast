@@ -20,11 +20,24 @@ get_header();
 		<?php while ( have_posts() ) :
 				the_post(); ?>
 
-		<section class="hero-image"></section>
+		<section class="hero-image">
+			<?php if (function_exists ('get_field')) {
+				if (get_field('hero_image')) {
+					$image = get_field('hero_image') ?>
+    					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			<?php 
+				}
+			} ?>
+		</section>
 
 		<section class="about-us">
 			<h2>About Us</h2>
-			<?php the_content(); ?>
+			<?php if (function_exists('get_field')) {
+					if (get_field ('about_us')) { ?>
+					<p><?php the_field('about_us'); ?></p>
+				<?php		
+					}
+				} ?>
 		</section>
 
 		<section class="how-it-works">
