@@ -31,7 +31,24 @@ get_header();
 			<h2>How It Works</h2>
 		</section>
 
-		<section class="testimonials"><!--testimonial array--></section>
+		<section class="testimonials">
+			<?php
+				$args = array(
+					'post_type'      => 'md-testimonials',
+					'posts_per_page' => 4
+				);
+
+				$query = new WP_Query ( $args );
+				
+				if ( $query -> have_posts() ){
+					while ( $query -> have_posts() ) {
+						$query -> the_post();
+						the_content();
+					}
+					wp_reset_postdata();
+			} ?>
+		
+		</section>
 
 		<section class="social-proof"></section>
 
