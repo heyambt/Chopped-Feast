@@ -22,6 +22,7 @@ get_header();
 		  $args = array(
 			'post_type' => 'md-recipes',
 			'post_per_page' => -1,
+    		'order'     => 'ASC',
 		 );
 		$query = new WP_Query( $args );
 	
