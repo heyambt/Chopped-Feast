@@ -80,14 +80,14 @@ function md_register_custom_post_types() {
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'recipes' ),
+        'rewrite'            => array( 'slug' => 'menu' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-archive',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
-        'template'           => array( array( 'core/image' ), array( 'core/paragraph' )),
+        'template'           => array( array( 'core/paragraph' )),
         'template_lock'      => 'all',
     );
 

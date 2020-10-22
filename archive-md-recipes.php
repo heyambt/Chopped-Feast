@@ -13,35 +13,66 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+				<h1><?php get_the_archive_title(); ?></h1>
+						
 		</header><!-- .page-header -->
-		<?php
-		  $args = array(
-			'post_type' => 'md-recipes',
-			'post_per_page' => -1,
-    		'order'     => 'ASC',
-		 );
-		$query = new WP_Query( $args );
 	
-		if ( $query->have_posts() ) {
-			while( $query->have_posts() ) {
-				$query->the_post();
-				echo '<article class="recipes-items">';
-				echo '<a href="';
-				the_permalink();
-				echo '">';
-				the_title();
-				echo the_post_thumbnail('medium');
-				echo '</a>';
-				the_excerpt();
-				echo '</article>';
-			}
-			wp_reset_postdata();
-		} 
+
+		<?php
+			$taxonomy = 'weekly-recipes';
+			$terms = get_terms(
+				array(
+					'taxonomy' => $taxonomy
+				)
+			);
+			if($terms && ! is_wp_error($terms) ){
+				foreach($terms as $term){
+					$term_args = array(
+						'post_type'      => 'md-recipes',
+						'posts_per_page' => -1,
+						'tax_query'      => array(
+								array(
+									'taxonomy' => $taxonomy,
+									'field'    => 'slug',
+									'terms'    => $term->slug,
+								)
+						),
+					);
+					$term_query = new WP_Query ($term_args);
+					if ( $term_query->have_posts() ) {
+						//display the term name dynamically
+						echo '<section class="week-section">';
+						echo '<h2>' . $term->name . '</h2>';
+						
+						while($term_query->have_posts()){
+							$term_query->the_post();
+							echo '<article>';
+
+							echo '<h3>';
+							the_title();
+							echo '</h3>';
+							 the_post_thumbnail('medium');
+							
+							the_content();
+							//  echo get_the_term_list( $post->ID, 'special-diets', 'special diets: ', ', ' ); 
+							$term_obj_list = get_the_terms( $post->ID, 'special-diets' );
+							$terms_string = join(', ', wp_list_pluck($term_obj_list, 'name'));
+							echo $terms_string;
+								echo '</article>';
+					
+						}//end while
+						echo '</section>';
+						wp_reset_postdata();
+					}// end if
+				}//end foreach
+			}//end if
 		?>
+
+
+
+
+	
+
 
 		
 
