@@ -63,7 +63,19 @@ get_header();
 		
 		</section>
 
-		<section class="social-proof"></section>
+		<section class="social-proof">
+			<h2>As Featured In</h2>
+			<?php if (function_exists('get_field')) {
+				if (have_rows('social_proof')): 
+					while(have_rows('social_proof')) :the_row();
+						$logo = get_sub_field('company_logo');
+						if (!empty($logo)) { ?>
+						<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+					<?php	}
+					endwhile;
+				endif;
+			} ?>
+		</section>
 
 		<section class="call-to-action"></section>
 
