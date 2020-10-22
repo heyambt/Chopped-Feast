@@ -30,6 +30,20 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+
+		if(have_rows('faq') ) : 
+            while(have_rows('faq') ):
+                the_row();
+            $q = get_sub_field('question');  
+            $a = get_sub_field('answer');
+			
+			echo $q;
+			echo '<br />';
+			echo $a;
+            
+            endwhile;
+        endif;
+
 		?>
 
 	</main><!-- #main -->
