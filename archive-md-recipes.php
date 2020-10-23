@@ -47,14 +47,11 @@ get_header();
 						while($term_query->have_posts()){
 							$term_query->the_post();
 							echo '<article>';
-
 							echo '<h3>';
 							the_title();
 							echo '</h3>';
-							 the_post_thumbnail('medium');
-							
-							the_content();
-							//  echo get_the_term_list( $post->ID, 'special-diets', 'special diets: ', ', ' ); 
+							 the_post_thumbnail('medium');							
+							the_content(); 
 							$term_obj_list = get_the_terms( $post->ID, 'special-diets' );
 							$terms_string = join(', ', wp_list_pluck($term_obj_list, 'name'));
 							echo $terms_string;
