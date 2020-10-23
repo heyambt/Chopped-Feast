@@ -66,12 +66,9 @@ get_header();
 		?>
 
 
-
-
-	
-
-
-		
+		<section class="call-to-action">
+			<a href="#0">See Plans</a>
+		</section>
 
 	</main><!-- #main -->
 
