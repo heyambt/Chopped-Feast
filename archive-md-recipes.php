@@ -16,7 +16,25 @@ get_header();
 				<h1><?php get_the_archive_title(); ?></h1>
 						
 		</header><!-- .page-header -->
-	
+
+	<!-- drop down menu-->
+		<?php
+			$terms = get_terms( array(
+				'taxonomy' => 'weekly-recipes'
+			) );
+			if ( $terms && ! is_wp_error($terms) ){
+				echo '<section><h2>Select Week</h2><select name="choice" class="choice">';
+				foreach ( $terms as $term ) {
+					echo '<option value="week"><a href="';
+					echo get_term_link( $term );
+					echo '">';
+					echo $term->name;
+					echo '</a></option>';
+				}
+				echo '</select></section>';
+			}
+		?>
+
 
 		<?php
 			$taxonomy = 'weekly-recipes';
@@ -64,6 +82,7 @@ get_header();
 				}//end foreach
 			}//end if
 		?>
+
 
 
 		<section class="call-to-action">
