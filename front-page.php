@@ -28,6 +28,8 @@ get_header();
 			<?php 
 				}
 			} ?>
+
+			<a href="#0">Order Now</a>
 		</section>
 
 		<section class="about-us">
@@ -77,8 +79,10 @@ get_header();
 			} ?>
 		</section>
 
-		<section class="call-to-action"></section>
-
+		<section class="call-to-action">
+			<a href="#0">Buy Now</a>
+			<a href="#0">Coupon</a>
+		</section>
 		
 		<?php endwhile; // End of the loop. ?>
 	</main><!-- #main -->
