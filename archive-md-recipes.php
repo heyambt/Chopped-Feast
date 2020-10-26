@@ -23,7 +23,8 @@ get_header();
 				'taxonomy' => 'weekly-recipes'
 			) );
 			if ( $terms && ! is_wp_error($terms) ){
-				echo '<section><h2>Select Week</h2><select name="choice" class="choice">';
+				echo '<section><h2>Select Week</h2>';
+				echo '<select id="choice">';
 				foreach ( $terms as $term ) {
 					echo '<option value="week"><a href="';
 					echo get_term_link( $term );
@@ -31,7 +32,8 @@ get_header();
 					echo $term->name;
 					echo '</a></option>';
 				}
-				echo '</select></section>';
+				echo '</select>';
+				echo'</section>';
 			}
 		?>
 
