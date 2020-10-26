@@ -26,11 +26,10 @@ get_header();
 				echo '<section><h2>Select Week</h2>';
 				echo '<select id="choice">';
 				foreach ( $terms as $term ) {
-					echo '<option value="week"><a href="';
-					echo get_term_link( $term );
-					echo '">';
+					echo '<option value="'.$term->slug.'">';
+					
 					echo $term->name;
-					echo '</a></option>';
+					echo '</option>';
 				}
 				echo '</select>';
 				echo'</section>';
@@ -61,7 +60,7 @@ get_header();
 					$term_query = new WP_Query ($term_args);
 					if ( $term_query->have_posts() ) {
 						//display the term name dynamically
-						echo '<section class="week-section">';
+						echo '<section class="week-section" id="'.$term->slug. '">';
 						echo '<h2>' . $term->name . '</h2>';
 						
 						while($term_query->have_posts()){
