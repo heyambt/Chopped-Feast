@@ -44,6 +44,20 @@ get_header();
 
 		<section class="how-it-works">
 			<h2>How It Works</h2>
+			<?php if (function_exists('get_field')) {
+				if (have_rows('how_it_works')):
+					while(have_rows('how_it_works')) :the_row();
+						$illust_guide = get_sub_field('illustration_guide');
+						if (!empty($illust_guide)) { ?>
+						<img src="<?php echo esc_url($illust_guide['url']); ?>" alt="<?php echo esc_attr($illust_guide['alt']); ?>" />
+					<?php	}
+						if (get_sub_field('text_guide')){ ?>
+							<p><?php the_sub_field('text_guide'); ?></p>
+				<?php	}
+					endwhile;
+				endif;
+				}
+			?>
 		</section>
 
 		<section class="testimonials">
