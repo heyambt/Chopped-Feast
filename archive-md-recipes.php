@@ -59,7 +59,8 @@ get_header();
 					$term_query = new WP_Query ($term_args);
 					if ( $term_query->have_posts() ) {
 						//display the term name dynamically
-						echo '<section class="week-section" id="'.$term->slug. '">';
+						// changed id="'.$term->slug.'" to a second class
+						echo '<section class="week-section '.$term->slug.' ">';
 						echo '<h2>' . $term->name . '</h2>';
 						
 						while($term_query->have_posts()){
