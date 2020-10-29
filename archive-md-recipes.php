@@ -44,6 +44,7 @@ get_header();
 				)
 			);
 			if($terms && ! is_wp_error($terms) ){
+				$counter= 0;
 				foreach($terms as $term){
 					$term_args = array(
 						'post_type'      => 'md-recipes',
@@ -57,14 +58,21 @@ get_header();
 						),
 					);
 					$term_query = new WP_Query ($term_args);
+				
 					if ( $term_query->have_posts() ) {
 						//display the term name dynamically
 						// changed id="'.$term->slug.'" to a second class
-						echo '<section class="week-section '.$term->slug.' ">';
+						if ($counter < 1 )	{
+							echo '<section class="week-section visible '.$term->slug.' ">';
+						}else {
+							echo '<section class="week-section '.$term->slug.' ">';
+						}
+						
 						echo '<h2>' . $term->name . '</h2>';
 						
 						while($term_query->have_posts()){
 							$term_query->the_post();
+							$counter++;
 							echo '<article>';
 							echo '<h3>';
 							the_title();
