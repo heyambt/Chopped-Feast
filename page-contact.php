@@ -29,6 +29,22 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+		
+	
+		
+	
+
+		$phone_number = get_field('phone_number');
+		$email = get_field('email') ;
+
+		
+		echo $phone_number ;
+		echo '</br>';
+		echo $email ;
+	
+   
+    
+
 		?>
 
 	</main><!-- #main -->
