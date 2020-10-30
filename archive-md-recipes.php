@@ -86,9 +86,6 @@ get_header();
 				}//end foreach
 			}//end if
 		?>
-
-
-
 		<section class="call-to-action">
 			<a href="<?php echo get_permalink(35);?>">See Plans</a>
 		</section>
