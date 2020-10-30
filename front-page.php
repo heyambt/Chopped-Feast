@@ -21,43 +21,40 @@ get_header();
 				the_post(); ?>
 
 		<section class="hero-image">
-			<?php if (function_exists ('get_field')) {
-				if (get_field('hero_image')) {
-					$image = get_field('hero_image') ?>
-    					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 			<?php 
-				}
-			} ?>
-
+				if (function_exists ('get_field')) :
+					if (get_field('hero_image')) :
+						echo wp_get_attachment_image(get_field('hero_image'), 'full');
+					endif;
+				endif;
+			?>
 			<a href="#0">Order Now</a>
 		</section>
 
 		<section class="about-us">
 			<h2>About Us</h2>
-			<?php if (function_exists('get_field')) {
-					if (get_field ('about_us')) { ?>
-					<p><?php the_field('about_us'); ?></p>
-				<?php		
-					}
-				} ?>
+			<?php if (function_exists('get_field')) :
+					if (get_field ('about_us')) : ?>
+						<p><?php the_field('about_us'); ?></p>
+			  <?php endif;
+				  endif; ?>
 		</section>
 
 		<section class="how-it-works">
 			<h2>How It Works</h2>
-			<?php if (function_exists('get_field')) {
-				if (have_rows('how_it_works')):
-					while(have_rows('how_it_works')) :the_row();
-						$illust_guide = get_sub_field('illustration_guide');
-						if (!empty($illust_guide)) { ?>
-						<img src="<?php echo esc_url($illust_guide['url']); ?>" alt="<?php echo esc_attr($illust_guide['alt']); ?>" />
-					<?php	}
-						if (get_sub_field('text_guide')){ ?>
-							<p><?php the_sub_field('text_guide'); ?></p>
-				<?php	}
-					endwhile;
-				endif;
-				}
-			?>
+			<?php if (function_exists('get_field')) :
+						if (have_rows('how_it_works')):
+							while(have_rows('how_it_works')) : the_row();
+								if (!empty(get_sub_field('illustration_guide'))) : 
+									echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
+								endif;
+
+								if (get_sub_field('text_guide')) : ?>
+									<p><?php the_sub_field('text_guide'); ?></p>
+						<?php	endif;
+							endwhile;
+						endif;
+				endif; ?>
 		</section>
 
 		<section class="testimonials">
@@ -69,28 +66,29 @@ get_header();
 
 				$query = new WP_Query ( $args );
 				
-				if ( $query -> have_posts() ){
-					while ( $query -> have_posts() ) {
+				if ( $query -> have_posts() ):
+					while ( $query -> have_posts() ) :
 						$query -> the_post();
 						the_content();
-					}
+					endwhile;
 					wp_reset_postdata();
-			} ?>
-		
+				endif; 
+			?>
 		</section>
 
 		<section class="social-proof">
 			<h2>As Featured In</h2>
-			<?php if (function_exists('get_field')) {
-				if (have_rows('social_proof')): 
-					while(have_rows('social_proof')) :the_row();
-						$logo = get_sub_field('company_logo');
-						if (!empty($logo)) { ?>
-						<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
-					<?php	}
-					endwhile;
-				endif;
-			} ?>
+			<?php 
+				if (function_exists('get_field')) :
+					if (have_rows('social_proof')): 
+						while(have_rows('social_proof')) :the_row();
+							if (!empty(get_sub_field('company_logo'))) :
+								echo wp_get_attachment_image(get_sub_field('company_logo'), 'thumbnail');
+							endif;
+						endwhile;
+					endif;
+				endif; 
+			?>
 		</section>
 
 		<section class="call-to-action">
