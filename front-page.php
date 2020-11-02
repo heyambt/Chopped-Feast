@@ -79,13 +79,12 @@ get_header();
 		<section class="social-proof">
 			<h2>As Featured In</h2>
 			<?php 
-				if (function_exists('get_field')) :
-					if (have_rows('social_proof')): 
-						while(have_rows('social_proof')) :the_row();
-							if (get_sub_field('company_logo')) :
-								echo wp_get_attachment_image(get_sub_field('company_logo'), 'thumbnail');
-							endif;
-						endwhile;
+				if (function_exists('get_field')):
+					if (get_field('social_proof')):
+						$images = get_field('social_proof');
+						foreach ($images as $image):
+							echo wp_get_attachment_image($image, 'thumbnail');
+						endforeach;
 					endif;
 				endif; 
 			?>
