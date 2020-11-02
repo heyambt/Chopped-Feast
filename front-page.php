@@ -28,7 +28,7 @@ get_header();
 					endif;
 				endif;
 			?>
-			<a href="#0">Order Now</a>
+			<a href="<?php echo get_permalink(35)?>">Order Now</a>
 		</section>
 
 		<section class="about-us">
@@ -45,7 +45,7 @@ get_header();
 			<?php if (function_exists('get_field')) :
 						if (have_rows('how_it_works')):
 							while(have_rows('how_it_works')) : the_row();
-								if (!empty(get_sub_field('illustration_guide'))) : 
+								if (get_sub_field('illustration_guide')) : 
 									echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
 								endif;
 
@@ -82,7 +82,7 @@ get_header();
 				if (function_exists('get_field')) :
 					if (have_rows('social_proof')): 
 						while(have_rows('social_proof')) :the_row();
-							if (!empty(get_sub_field('company_logo'))) :
+							if (get_sub_field('company_logo')) :
 								echo wp_get_attachment_image(get_sub_field('company_logo'), 'thumbnail');
 							endif;
 						endwhile;
@@ -92,8 +92,8 @@ get_header();
 		</section>
 
 		<section class="call-to-action">
-			<a href="#0">Buy Now</a>
-			<a href="#0">Coupon</a>
+			<a href="<?php echo get_permalink(35)?>">Buy Now</a>
+			<a href="<?php echo get_permalink(35)?>">Coupon</a>
 		</section>
 		
 		<?php endwhile; // End of the loop. ?>
