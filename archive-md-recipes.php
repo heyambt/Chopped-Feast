@@ -72,13 +72,12 @@ get_header();
 							echo '<h3>';
 							the_title();
 							echo '</h3>';
-							the_post_thumbnail('medium');							
+							the_post_thumbnail('medium');						
 							the_content(); 
 							$term_obj_list = get_the_terms( $post->ID, 'special-diets' );
 							$terms_string = join(', ', wp_list_pluck($term_obj_list, 'name'));
 							echo $terms_string;
 							echo '</article>';
-					
 						}//end while
 						echo '</section>';
 						wp_reset_postdata();
@@ -89,9 +88,7 @@ get_header();
 		<section class="call-to-action">
 			<a href="<?php echo get_permalink(35);?>">See Plans</a>
 		</section>
-
 	</main><!-- #main -->
-
 <?php
 // get_sidebar();
 get_footer();
