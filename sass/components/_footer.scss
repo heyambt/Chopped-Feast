@@ -1,0 +1,13 @@
+.site-footer {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.site-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+li {
+    list-style: none;
+}
