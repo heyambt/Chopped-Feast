@@ -6,14 +6,15 @@
 }
 
 @font-face {
-	font-family: "MADE Tommy Bold Outline";
-	src: url("./fonts/MadeTOMMY-Bold-Outline.otf") format("opentype");
+	font-family: "MADE Tommy Black";
+	src: url("./fonts/MadeTOMMY-Black.otf") format("opentype");
 	font-style: normal;
 	font-weight: normal;
 }
 
 // stylelint-disable value-keyword-case
 $font__main: "Louis George Cafe", sans-serif;
+$font__header: "MADE Tommy Black", sans-serif;
 // stylelint-enable value-keyword-case
 $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;
