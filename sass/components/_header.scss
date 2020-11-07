@@ -1,0 +1,77 @@
+.site-header {
+    background-color: $olive;
+    color: $beige;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-branding a {
+    color: $beige;
+    font-size: 1.3em;
+}
+
+.menu-toggle {
+    position: absolute;
+	top: -4rem;
+	right: .5rem;
+	z-index: 999;
+	width: 3.75rem;
+	padding: 1rem;
+	margin: 0;
+	border: none;
+	background: transparent;
+	color: #fff;
+}
+
+.main-navigation {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    z-index: 888;
+    ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        background-color: $olive;
+        li {
+            position: relative;
+            padding: 5px 0px;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: $beige;
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Toggle the Navigation Menu
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation {
+        ul {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
