@@ -74,9 +74,11 @@ get_header();
 							echo '</h3>';
 							the_post_thumbnail('medium');						
 							the_content(); 
+							echo '<section class="special-diet-name">';
 							$term_obj_list = get_the_terms( $post->ID, 'special-diets' );
 							$terms_string = join(', ', wp_list_pluck($term_obj_list, 'name'));
 							echo $terms_string;
+							echo '</section>';
 							echo '</article>';
 						}//end while
 						echo '</section>';

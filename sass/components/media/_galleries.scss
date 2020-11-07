@@ -9,6 +9,34 @@
 	text-align: center;
 	width: 100%;
 }
+//menu-page dropdown menu
+.dropdown {
+	background-color: $dark_orange;
+	width: 150px;
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+}
+select {
+	color: $color__background-body;
+	outline: none;
+}
+.week-section {
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+	padding: 3%;
+}
+.week-section p {
+	padding-left: 10%;
+	padding-right: 8%;
+	margin-bottom: 5px;
+	text-align: left;
+}
+.special-diet-name {
+	color: $dark_orange;
+}
+
 
 // Loops to enumerate the classes for gallery columns.
 @for $i from 2 through 9 {
