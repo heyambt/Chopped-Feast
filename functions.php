@@ -148,12 +148,22 @@ function meal_delivery_scripts() {
 
 	wp_enqueue_script( 'meal-delivery-menu', get_template_directory_uri() . '/js/menu.js', array(), _S_VERSION, true ); 
 
+	wp_enqueue_script( 'meal-delivery-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-gxceShvT7g-5mEDHJEsANXz05NPKfDE', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'meal-delivery-map-settings', get_template_directory_uri() . '/js/googlemap.js', array('jquery'), _S_VERSION, true ); 
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
 }
 add_action( 'wp_enqueue_scripts', 'meal_delivery_scripts' );
+
+function my_acf_google_map_api( $api){
+	$api['key'] = 'AIzaSyC-gxceShvT7g-5mEDHJEsANXz05NPKfDE';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 /**
  * Implement the Custom Header feature.
