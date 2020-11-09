@@ -1,3 +1,19 @@
-.about-us p {
+.homepage-main p {
     text-align: left;
+}
+
+.hero-image {
+    position: relative;
+    text-align: center;
+    img {
+        opacity: 0.7;
+        max-width: 100%;
+        height: auto;
+    }
+    a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
