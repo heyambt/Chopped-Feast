@@ -22,7 +22,10 @@
 	margin: 0;
 	border: none;
 	background: transparent;
-	color: #fff;
+        svg {
+            fill: $beige;
+            cursor: pointer;
+        }
 }
 
 .main-navigation {
@@ -40,7 +43,8 @@
         background-color: $olive;
         li {
             position: relative;
-            padding: 5px 0px;
+            padding: 15px 0px;
+            border: 1px solid $beige;
         }
         a {
             display: block;
@@ -48,6 +52,9 @@
             color: $beige;
             text-align: center;
             font-size: 1.1em;
+            &:hover {
+                color: $dark_orange;
+            }
         }
     }
 }
@@ -64,14 +71,30 @@
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-	.main-navigation {
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-branding a {
+        margin-left: 30px;
+    }
+
+    .main-navigation {
+        width: auto;
+        position: static;
         ul {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            li {
+                margin: 0px 30px;
+                border: none;
+            }
         }
     }
 }
