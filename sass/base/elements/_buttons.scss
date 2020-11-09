@@ -22,7 +22,8 @@ input[type="submit"] {
 
 // call-to-action 
 
-.call-to-action a {
+.call-to-action a,
+.hero-image a {
 	text-decoration: none;
 	padding-top: 6px;
 	padding-bottom: 6px;
@@ -30,6 +31,11 @@ input[type="submit"] {
 	padding-right: 70px;
 	background-color: $dark_orange;
 	color: $color__background-body;
+	.hero-image a:hover, 
+	.hero-image a:active, 
+	.hero-image a:focus {
+		background-color: $olive;
+	}
 }
 .call-to-action a:hover,
 .call-to-action a:active,
