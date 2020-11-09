@@ -43,12 +43,37 @@ get_header();
 			echo $a;
             
             endwhile;
-        endif;
+		endif;
+		
+		if(function_exists('get_field')){
+			if(get_field('faq_map')){
+				echo '<div class="faq_map_field">';
+			
+			$location = get_field('faq_map');
+
+			if( $location ){
+			echo '<div ';
+			echo 'class="acf-map" ';
+			echo 'data-zoom="16">';
+				echo'div ';
+				echo 'class="marker" ';
+				echo 'data-lat= ';
+				echo esc_attr($location['lat']);
+				echo '';
+				echo ' data-lng= ';
+				echo esc_attr($location['lng']);
+				echo '>';
+
+				echo '</div>';
+				echo '</div>';
+			} 
+			echo '</div>';
+	}}
 
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
