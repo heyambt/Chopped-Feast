@@ -46,6 +46,7 @@ get_header();
 		endif;
 
 		$location = get_field('faq_map');
+		
 		if( $location ){
 			echo '<div ';
 			echo 'class="acf-map" ';
@@ -62,7 +63,7 @@ get_header();
 				echo '</div>';
 			echo '</div>';
 		} 
-		
+		endif;
 
 		?>
 
