@@ -1,13 +1,36 @@
 .site-footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
+    background-color: $olive;
+    color: $beige;
+    a {
+        text-decoration: none;
+        color: $beige;
+    }
+    margin-top: 15px;
 
 }
 .site-info {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap;   
+    p {
+        margin: 0 auto;
+    }
 }
-li {
-    list-style: none;
+#footer-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-decoration: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+    margin-top: 20px;
+    li {
+        list-style: none;
+    }
 }
+
+
