@@ -49,14 +49,22 @@ select {
 .gallery-caption {
 	display: block;
 }
-
+.week-section {
+	display: none;
+}
+.week-section.visible {
+	display: block;
+  }
 // Grids menu page
 @media screen and (min-width: 650px) {
 
-	.week-section 
-	.week-section {
+	
+	.week-section.visible {
 		display: grid;
-		grid-template-columns: 50px 50px 50px 50px;
+		grid-template-columns: 1fr 1fr ;
 		grid-template-rows: auto;
-	}
+	  }
+	  .week-section h2 {
+		  grid-column: 1/3;
+	  }
 }
