@@ -26,10 +26,6 @@
 	margin: 0;
 	border: none;
 	background: transparent;
-        svg {
-            fill: $beige;
-            cursor: pointer;
-        }
 }
 
 .main-navigation {
@@ -62,7 +58,11 @@
         }
     }
 }
+svg {
+    fill: $beige;
+    cursor: pointer;
 
+}
 .nav-menu {
     display: flex;
     justify-content: space-between;
@@ -100,9 +100,7 @@
                 border: none;
             }
 
-    svg {
-        fill: $beige;
-    }
+    
 
         
         }
