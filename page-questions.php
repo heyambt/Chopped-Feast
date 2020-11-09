@@ -44,10 +44,14 @@ get_header();
             
             endwhile;
 		endif;
-
-		$location = get_field('faq_map');
 		
-		if( $location ){
+		if(function_exists('get_field')){
+			if(get_field('faq_map')){
+				echo '<div class="faq_map_field">';
+			
+			$location = get_field('faq_map');
+
+			if( $location ){
 			echo '<div ';
 			echo 'class="acf-map" ';
 			echo 'data-zoom="16">';
@@ -61,9 +65,10 @@ get_header();
 				echo '>';
 
 				echo '</div>';
+				echo '</div>';
+			} 
 			echo '</div>';
-		} 
-		endif;
+	}}
 
 		?>
 
