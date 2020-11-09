@@ -223,5 +223,6 @@ if ( ! function_exists( 'meal_delivery_woocommerce_header_cart' ) ) {
 			</li>
 		</ul>
 		<?php
-	}
+	}	
 }
+add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt');

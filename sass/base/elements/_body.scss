@@ -5,4 +5,18 @@ body {
 .site-main {
 	margin: 0 auto;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	.products {
+		margin-top: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		.product {
+			margin-right: 0;
+		}
+		img {
+			margin: 0 auto;
+		}
+	}
 }
