@@ -21,20 +21,13 @@
 			);
 		?>
 		<div class="site-info">
-			<p>
-				<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'meal-delivery' ), 'meal-delivery', 'Claire, Hirdey, Heyam, Vidhi and Wei' );
-				?>
+		<p>
+			<?php echo 'Created by: Claire, Heyam, Hirdey, Vidhi, and Wei' ?>
 			</p>
-			<div>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'meal-delivery' ) ); ?>">
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Powered by %s', 'meal-delivery' ), 'WordPress' );
-					?>
-				</a>
-			</div>
+			<p>
+			<?php echo 'For Educational Purposes' ?>
+			</p>
+			
 			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
