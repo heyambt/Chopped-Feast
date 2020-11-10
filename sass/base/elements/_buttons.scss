@@ -30,18 +30,21 @@ input[type="submit"] {
 	padding-left: 70px;
 	padding-right: 70px;
 	background-color: $dark_orange;
-	color: $color__background-body;
-	.hero-image a:hover, 
-	.hero-image a:active, 
-	.hero-image a:focus {
-		background-color: $olive;
-	}
+	color: $beige;
+	
 }
 .call-to-action a:hover,
 .call-to-action a:active,
 .call-to-action a:focus {
 	background-color: $olive;
 }
+.hero-image a:hover, 
+.hero-image a:active, 
+.hero-image a:focus {
+	background-color: $olive;
+}
+
+
 
 // @media screen and (min-width: 450px) {
 

@@ -6,6 +6,9 @@
     justify-content: space-between;
     align-items: center;
 }
+.site-branding img {
+    max-width: 100px;
+}
 
 .site-branding a {
     color: $beige;
@@ -84,10 +87,10 @@ svg {
     .menu-toggle {
         display: none;
     }
-
     .site-branding a {
         margin-left: 30px;
     }
+   
 
     .main-navigation {
         width: auto;
@@ -106,3 +109,4 @@ svg {
         }
     }
 }
+
