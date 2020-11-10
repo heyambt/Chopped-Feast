@@ -1,5 +1,6 @@
 .homepage-main p {
     text-align: left;
+    font-size: 1.125rem;
 }
 
 .hero-image {
@@ -16,4 +17,32 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+}
+
+.about-us,
+.how-it-works {
+    padding: 10px 25px;
+    p {
+        line-height: 2em;
+    }
+}
+
+.testimonials, 
+.social-proof, 
+.call-to-action {
+    margin-bottom: 25px;
+}
+
+.testimonials p {
+    line-height: 2em;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+}
+
+.social-proof img {
+    margin: 15px;
+}
+
+.call-to-action {
+    margin-bottom: 25px;
 }
