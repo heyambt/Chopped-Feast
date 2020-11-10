@@ -4,9 +4,11 @@
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
-
+.site-main {
+	min-height: 500px;
+}
 .updated:not(.published) {
 	display: none;
 }
