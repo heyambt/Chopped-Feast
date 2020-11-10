@@ -1,6 +1,8 @@
 ul.products {
-	margin: 0;
-	padding: 0;
+	display: flex;
+	flex-direction: column;
+	margin: 5px auto;
+	padding-inline-start: 0;
 
 	li.product {
 		list-style: none;
@@ -17,44 +19,13 @@ ul.products {
 	}
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 600px) {
 
 	ul.products {
-
-		li.product {
-
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: both;
-			}
-
-			&.last {
-				margin-right: 0;
-			}
-		}
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-evenly;
 	}
 
-	ul.products.columns-1 {
-
-		li.product {
-			float: none;
-			width: 100%;
-		}
-
-	}
-
-	@for $i from 2 through 6 {
-
-		ul.products.columns-#{$i} {
-
-			li.product {
-
-				@include column-width( $i );
-			}
-
-		}
-	}
+	
 }
