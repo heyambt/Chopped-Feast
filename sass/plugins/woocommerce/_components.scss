@@ -136,7 +136,18 @@ p.stars {
 		}
 	}
 }
-
+/**
+* breadcrumb
+*/
+.woocommerce-breadcrumb {
+	display: none;
+}
+/**
+*result count
+*/
+.woocommerce-result-count, .woocommerce-ordering {
+	display: none;
+}
 /**
  * Tabs
  */

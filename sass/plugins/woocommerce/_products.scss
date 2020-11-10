@@ -1,7 +1,7 @@
 ul.products {
 	display: flex;
 	flex-direction: column;
-	margin: 5px auto;
+	margin: 15px auto;
 	padding-inline-start: 0;
 
 	li.product {
@@ -11,12 +11,23 @@ ul.products {
 
 		img {
 			display: block;
+			margin-bottom: 25px;
 		}
 
 		.button {
 			display: block;
 		}
 	}
+}
+.woocommerce-LoopProduct-link, .woocommerce-loop-product__link, .add_to_cart_button {
+	text-decoration: none;
+	color: $brown;
+}
+.price {
+	margin-top: 25px;
+}
+.woocommerce-loop-product__title, .price, .woocommerce-product-details__short-description {
+	color: $brown;
 }
 
 @media screen and (min-width: 600px) {
