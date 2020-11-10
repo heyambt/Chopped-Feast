@@ -42,19 +42,26 @@ get_header();
 
 		<section class="how-it-works">
 			<h2>How It Works</h2>
-			<?php if (function_exists('get_field')) :
-						if (have_rows('how_it_works')):
-							while(have_rows('how_it_works')) : the_row();
-								if (get_sub_field('illustration_guide')) : 
-									echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
-								endif;
+			<div class="how-it-works-section">
+				<?php if (function_exists('get_field')) :
+							if (have_rows('how_it_works')):
+								while(have_rows('how_it_works')) : the_row();
+									if (get_sub_field('illustration_guide')) :
+										echo '<div class="how-it-works-card">'; 
+										echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
+									endif;
 
-								if (get_sub_field('text_guide')) : ?>
-									<p><?php the_sub_field('text_guide'); ?></p>
-						<?php	endif;
-							endwhile;
-						endif;
-				endif; ?>
+									if (get_sub_field('text_guide')) : ?>
+										<p><?php the_sub_field('text_guide'); ?></p>
+										<?php
+										echo '</div>';
+								endif;
+								endwhile;
+						?>
+							<?php	
+							endif;
+					endif; ?>
+			</div>
 		</section>
 
 		<section class="testimonials">
