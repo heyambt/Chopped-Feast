@@ -38,7 +38,10 @@ get_header();
             $q = get_sub_field('question');  
             $a = get_sub_field('answer');
 			
-			echo $q;
+			?>
+			<h2> <?php
+			echo $q; ?></h2>
+			<?php
 			echo '<br />';
 			echo $a;
             
@@ -49,7 +52,7 @@ get_header();
 			$location = get_field('faq_map');
 			if( $location ) : ?>
 				<div class="faq_map_field">
-					<div class="acf-map" data-zoom="16">
+					<div class="acf-map" data-zoom="14">
 						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
 					</div>
 				</div>
