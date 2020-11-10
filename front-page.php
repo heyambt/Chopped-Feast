@@ -46,15 +46,14 @@ get_header();
 				<?php if (function_exists('get_field')) :
 							if (have_rows('how_it_works')):
 								while(have_rows('how_it_works')) : the_row();
-									if (get_sub_field('illustration_guide')) :
-										echo '<div class="how-it-works-card">'; 
-										echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
+									if (get_sub_field('illustration_guide')) : ?>
+										<div class="how-it-works-card">
+									<?php	echo wp_get_attachment_image(get_sub_field('illustration_guide'),'medium');						
 									endif;
 
 									if (get_sub_field('text_guide')) : ?>
-										<p><?php the_sub_field('text_guide'); ?></p>
+										<p><?php the_sub_field('text_guide'); ?></p></div>
 										<?php
-										echo '</div>';
 								endif;
 								endwhile;
 						?>

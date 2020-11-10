@@ -84,11 +84,18 @@
     .how-it-works-section {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 25px;
+        grid-gap: 70px;
     }
 
     .how-it-works-card {
         max-width: 500px;
+        p {
+            width: 300px;
+        }
+        img {
+            height: 214px;
+            object-fit: cover;
+        }
     }
 
     .testimonials {

@@ -209,6 +209,9 @@ p.stars {
 			box-shadow: inset 2px 0 0 $woocommerce__color-error;
 		}
 	}
+	.woocommerce-form {
+		display: flex;
+	}
 }
 
 .required {
