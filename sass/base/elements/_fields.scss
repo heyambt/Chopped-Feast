@@ -41,13 +41,23 @@ textarea {
 	padding: 20px;
 	margin: 30px 40px;
 }
-.woocommerce {
-	max-width: 500px;
-	margin: 0 auto;
-}
 
-@media screen and (max-width: 650px) {
+@media screen and (min-width: 650px) {
 	.u-columns label {
 		width: 100%;
 	}
+	.woocommerce-form-row {
+		display: flex;
+		align-items: center;
+	}
+	.woocommerce-form-row label {
+		min-width: 150px;
+	}
+	.woocommerce-form-row span, 
+	.woocommerce-form-row input {
+		width: 100%;
+	}
+	// .u-columns {
+	// 	display: flex;
+	// }
 }
