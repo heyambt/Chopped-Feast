@@ -204,3 +204,8 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/** Adding themes to the Block Editor */
+add_editor_style(); 
+
+add_theme_support( 'editor-styles' );
