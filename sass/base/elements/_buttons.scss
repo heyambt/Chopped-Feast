@@ -2,40 +2,45 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
+	border: none;
 	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
+	background: $dark_orange;
+	color: $beige;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.7em  1.5em;
+	width: 100%;
+	
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		background-color: $olive;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: $olive;
 	}
+	
 }
 
 // call-to-action 
 
 .call-to-action a,
-.hero-image a {
+.hero-image a,
+.button.wc-backward  {
 	text-decoration: none;
+	border-radius: 3px;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	padding-left: 70px;
 	padding-right: 70px;
 	background-color: $dark_orange;
 	color: $beige;
+	cursor: pointer;
 	
 }
-.call-to-action a:hover,
-.call-to-action a:active,
-.call-to-action a:focus {
+.call-to-action a:hover, .button.wc-backward:hover,
+.call-to-action a:active, .button.wc-backward:active,
+.call-to-action a:focus, .button.wc-backward:focus {
 	background-color: $olive;
 }
 .hero-image a:hover, 
@@ -43,6 +48,7 @@ input[type="submit"] {
 .hero-image a:focus {
 	background-color: $olive;
 }
+
 
 
 
