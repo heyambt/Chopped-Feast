@@ -42,7 +42,7 @@ textarea {
 	margin: 30px 40px;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
 	.u-columns label {
 		width: 100%;
 	}
@@ -57,7 +57,12 @@ textarea {
 	.woocommerce-form-row input {
 		width: 100%;
 	}
-	// .u-columns {
-	// 	display: flex;
-	// }
+	.u-columns {
+		display: flex;
+		justify-content: space-between;
+	}
+	.u-columns .col-1,
+	.u-columns .col-2 {
+		width: 45%;
+	}
 }
