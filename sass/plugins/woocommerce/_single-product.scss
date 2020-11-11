@@ -87,10 +87,10 @@
 		color: $woocommerce__color-error;
 	}
 }
-table.variations {
-	width: 500px;
-	margin: 0 auto;
-}
+// table.variations {
+// 	width: 500px;
+// 	margin: 0 auto;
+// }
 a.reset_variations {
 	margin-left: 15px;
 }
@@ -107,6 +107,40 @@ ul.wc-tabs {
 		line-height: 1.5em;
 	}
 }
+
 #recipes-per-week {
 	color: $brown;
+}
+
+.entry-summary {
+	.variations {
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		td { 
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+		}
+		td:before { 
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+	}
+	.woocommerce-variation-price {
+		font-weight: bold;
+		font-size: 1.1em;
+	}
+	.wc-pao-addon-vegetarian {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.product-addon-totals ul {
+		 padding: 0;
+	}
 }
