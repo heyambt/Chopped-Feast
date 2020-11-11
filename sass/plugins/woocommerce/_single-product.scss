@@ -132,8 +132,10 @@ ul.wc-tabs {
 		}
 	}
 	.woocommerce-variation-price {
-		font-weight: bold;
 		font-size: 1.1em;
+		bdi {
+			font-weight: bold;
+		}
 	}
 	.wc-pao-addon-vegetarian {
 		display: flex;
@@ -142,5 +144,15 @@ ul.wc-tabs {
 	}
 	.product-addon-totals ul {
 		 padding: 0;
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.entry-summary {
+		.variations {
+			table, thead, tbody, th, td, tr {
+				display: inline;
+			}
+		}
 	}
 }
