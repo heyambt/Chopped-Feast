@@ -191,12 +191,11 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
 /**
  * custom posty types and taxonomies
  */
-
 require get_template_directory() . '/inc/cpt-taxonomy.php';
-
 
 /**
  * Load WooCommerce compatibility file.
@@ -209,3 +208,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 add_editor_style(); 
 
 add_theme_support( 'editor-styles' );
+
+/* Remove the function that zooms in images */
+function remove_product_zoom_support() {
+    remove_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'wp', 'remove_product_zoom_support', 100 );
