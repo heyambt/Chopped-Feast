@@ -21,7 +21,7 @@
 
 .menu-toggle {
     position: absolute;
-	top: -5rem;
+	top: -3.7rem;
 	right: .5rem;
 	z-index: 999;
 	width: 3.75rem;
@@ -35,7 +35,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    top: 5rem;
+    top: 4rem;
     right: 0;
     z-index: 888;
     ul {
@@ -90,7 +90,6 @@ svg {
     .site-branding a {
         margin-left: 30px;
     }
-   
 
     .main-navigation {
         width: auto;
@@ -102,10 +101,6 @@ svg {
                 margin: 0px 30px;
                 border: none;
             }
-
-    
-
-        
         }
     }
 }
