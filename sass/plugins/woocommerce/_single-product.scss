@@ -1,12 +1,14 @@
 .single-product {
-
+/* main div of all product info */
 	div.product {
 		position: relative;
-
+		width: 80%;
+		max-width: 800px;
+		margin: 0 auto;
+/* div containing image and magnifier */
 		.woocommerce-product-gallery {
-			position: relative;
-			float: left;
-
+			margin: 0 auto;
+/* image magnifier */
 			.woocommerce-product-gallery__trigger {
 				position: absolute;
 				top: 2em;
@@ -83,4 +85,20 @@
 	&.out-of-stock {
 		color: $woocommerce__color-error;
 	}
+}
+table.variations {
+	width: 500px;
+	margin: 0 auto;
+}
+a.reset_variations {
+	margin-left: 15px;
+}
+.woocommerce-tabs {
+	margin: 0 auto;
+}
+ul.wc-tabs {
+	margin-left: 2rem;
+}
+#tab-description {
+	text-align: center;
 }
