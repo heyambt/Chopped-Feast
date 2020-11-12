@@ -230,3 +230,12 @@ function my_toolbars( $toolbars ) {
 	return $toolbars;
 }
 add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+
+/* Remove Block Editor from Home & FAQ Pages */
+function md_post_filter( $use_block_editor, $post ) {
+	if ( 22 === $post->ID || 31 === $post->ID ) {
+		return false;
+	}
+	return $use_block_editor;
+}
+add_filter( 'use_block_editor_for_post', 'md_post_filter', 10, 2 );
