@@ -275,3 +275,14 @@ function md_post_filter( $use_block_editor, $post ) {
 	return $use_block_editor;
 }
 add_filter( 'use_block_editor_for_post', 'md_post_filter', 10, 2 );
+
+/* Add Welcome Message widget on Dashboard */
+function my_custom_dashboard_widgets() {
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('custom_help_widget', 'Chopped Fresh Message', 'custom_dashboard_help');
+}
+ 
+function custom_dashboard_help() {
+	echo '<p>Welcome to the dashboard! Please feel free add content to your website by creating new posts or pages. If you have any questions, contact the TWD 25 development team <a href="mailto:info@example.com">here</a></p>';
+}
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
