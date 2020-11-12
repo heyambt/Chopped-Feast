@@ -21,7 +21,9 @@ get_header();
 				<p><?php esc_html_e( 'Please click on Home. ', 'meal-delivery' ); ?></p>
 
 				<?php
-				echo wp_get_attachment_image()
+				echo '<figure>';
+				echo wp_get_attachment_image(292);
+				echo '</figure>';
 					
 				?>
 					
