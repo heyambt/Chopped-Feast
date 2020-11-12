@@ -7,9 +7,10 @@
     position: relative;
     text-align: center;
     img {
-        opacity: 0.7;
+        opacity: 0.9;
         max-width: 100%;
-        height: auto;
+        height: 400px;
+        object-fit: cover;
     }
     a {
         position: absolute;
@@ -27,16 +28,22 @@
     }
 }
 
+.how-it-works-card .arrow {
+    display: none;
+}
+
 .testimonials, 
 .social-proof, 
 .call-to-action {
     margin-bottom: 25px;
 }
 
-.testimonials p {
-    line-height: 2em;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+.testimonials {
+    p {
+        line-height: 2em;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px; 
+    }
 }
 
 .social-proof img {
@@ -52,6 +59,10 @@
     .testimonials {
         padding-left: 60px;
         padding-right: 60px;
+    }
+    .hero-image img {
+        height: auto;
+        object-fit: fill;
     }
 }
 
@@ -95,6 +106,9 @@
         img {
             height: 214px;
             object-fit: cover;
+        }
+        .arrow {
+            display: inline;
         }
     }
 
