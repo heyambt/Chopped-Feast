@@ -28,7 +28,16 @@ get_header();
 					endif;
 				endif;
 			?>
-			<a href="<?php echo get_permalink(35)?>">Order Now</a>
+			<div class="hero-text">
+				<h1><?php 
+					if (function_exists('get_field')) :
+						if (get_field('hero_text')) :
+							the_field('hero_text');
+						endif;
+					endif;
+				?></h1>
+				<a href="<?php echo get_permalink(35)?>">Order Now</a>
+			</div>
 		</section>
 
 		<section class="about-us">
