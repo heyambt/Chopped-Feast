@@ -137,30 +137,14 @@ function meal_delivery_widgets_init() {
 }
 add_action( 'widgets_init', 'meal_delivery_widgets_init' );
 
-// add widgets
-function meal_delivery_add_dashboard_widget () {
-	wp_add_dashboard_widget (
-		'meal_delivery_dashboard_widget',
-		esc_html__('Welcome Message', 'meal_delivery'),
-		'meal_delivery_dashboard_widget_render'
-	);
-}
-add_action( 'wp_dashboard_setup', 'meal_delivery_add_dashboard_widget' );
-function meal_delivery_dashboard_widget_render() {
-    esc_html_e( "Hello, Welcome to Chopped Feast", "meal_delivery" );
-}
-
 // remove default widgets 
 function meal_delivery_remove_dashboard_widget() {
     remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 } 
-// Hook into the 'wp_dashboard_setup' action to register our function
 add_action( 'wp_dashboard_setup', 'meal_delivery_remove_dashboard_widget' );
 
 function meal_delivery_remove_all_dashboard_metaboxes() {
-    // Remove Welcome panel
     remove_action( 'welcome_panel', 'wp_welcome_panel' );
-    // Remove the rest of the dashboard widgets
     remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
     remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
     remove_meta_box( 'health_check_status', 'dashboard', 'normal' );
