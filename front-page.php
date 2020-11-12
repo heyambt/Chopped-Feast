@@ -64,6 +64,7 @@ get_header();
 		</section>
 
 		<section class="testimonials">
+			<h2>Testimonials</h2>
 			<?php
 				$args = array(
 					'post_type'      => 'md-testimonials',
