@@ -214,3 +214,19 @@ function remove_product_zoom_support() {
     remove_theme_support( 'wc-product-gallery-zoom' );
 }
 add_action( 'wp', 'remove_product_zoom_support', 100 );
+
+/* Customize the WYSIWYG Toolbar */
+function my_toolbars( $toolbars ) {
+	$toolbars['Very Simple' ] = array();
+	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
+
+	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
+	{
+	    unset( $toolbars['Full' ][2][$key] );
+	}
+	
+	unset( $toolbars['Basic' ] );
+
+	return $toolbars;
+}
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
