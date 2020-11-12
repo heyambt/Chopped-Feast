@@ -28,16 +28,22 @@
     }
 }
 
+.how-it-works-card .arrow {
+    display: none;
+}
+
 .testimonials, 
 .social-proof, 
 .call-to-action {
     margin-bottom: 25px;
 }
 
-.testimonials p {
-    line-height: 2em;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+.testimonials {
+    p {
+        line-height: 2em;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px; 
+    }
 }
 
 .social-proof img {
@@ -100,6 +106,9 @@
         img {
             height: 214px;
             object-fit: cover;
+        }
+        .arrow {
+            display: inline;
         }
     }
 
