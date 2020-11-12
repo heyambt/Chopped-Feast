@@ -137,7 +137,7 @@ function meal_delivery_widgets_init() {
 }
 add_action( 'widgets_init', 'meal_delivery_widgets_init' );
 
-// login logo
+// add widgets
 function meal_delivery_add_dashboard_widget () {
 	wp_add_dashboard_widget (
 		'meal_delivery_dashboard_widget',
