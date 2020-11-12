@@ -8,13 +8,9 @@
 /* div containing image and magnifier */
 		.woocommerce-product-gallery {
 			margin: 0 auto;
+			margin-top: 47px;
 /* image magnifier */
 			.woocommerce-product-gallery__trigger {
-				// position: absolute;
-				// top: 2em;
-				// right: 1em;
-				// display: block;
-				// z-index: 99;
 				display: none;
 			}
 
