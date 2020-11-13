@@ -21,12 +21,12 @@
             color: $beige;
             -webkit-text-stroke: 1px $brown;
             animation-name: anime;
-            animation-duration: 1.5s;
+            animation-duration: 2s;
             animation-iteration-count: 3;
         }
         @keyframes anime {
             from {color: $beige;}
-            to {color: $brown;}
+            to {color: $dark_orange;}
           }
     }
 }
