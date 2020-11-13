@@ -239,16 +239,19 @@ p.stars {
 p.no-comments {
 	background-color: $woocommerce__color-success;
 	clear: both;
+	color: $beige;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
 	background-color: $woocommerce__color-info;
+	color: $beige;
 }
 
 .woocommerce-error {
 	background-color: $woocommerce__color-error;
+	color: $beige;
 }
 
 .demo_store {

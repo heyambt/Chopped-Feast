@@ -1,0 +1,49 @@
+
+/* Set Product Table Border styling */
+.woocommerce .woocommerce-cart-form table.shop_table,
+.woocommerce .woocommerce-cart-form table.shop_table tr,
+.woocommerce .woocommerce-cart-form table.shop_table td,
+.woocommerce .woocommerce-cart-form table.shop_table th
+.cart-totals table.shop_table, 
+.cart-totals table.shop_table tr, 
+.cart-totals table.shop_table td, 
+.cart-totals table.shop_table th {
+  border: 1px solid #55692a;
+  border-radius: 0;
+  border-collapse: collapse;
+  .actions {
+      text-align: right;
+  }
+}
+.woocommerce .woocommerce-cart-form table.shop_table th {
+    background-color: #55692a;
+    color: #f5f3da;
+}
+a.remove {
+    text-decoration: none;
+    font-size: 35px;
+}
+a.remove:hover {
+    color: #8a3322;
+}
+/* text for removing item from cart, to be optimized
+a.remove:hover:after {
+    content: "remove this item";
+    position: relative;
+    font-size: 15px;
+    transform: 
+    color: #8a3322;
+}
+*/
+/* Set Product table Column header weight */
+.woocommerce-cart-form table.shop_table th {
+  font-weight: 500 !important;
+}
+
+/* Hide Cart Cross Sells on Mobile 
+@media only screen and (max-width: 480px) {
+  .cart-collaterals .cross-sells {
+    display: none;
+  }
+}
+*/
