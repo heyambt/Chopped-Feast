@@ -279,16 +279,24 @@ function twd_remove_admin_links() {
 }
 add_action( 'admin_menu', 'twd_remove_admin_links' );
 
-/* Change the logo on the WordPress login page */
-function my_login_logo() { ?>
+/* Change the logo on the WordPress login page 
+   Styling the login page */
+function my_login_style() { ?>
     <style type="text/css">
+		body.login {
+			background-color: #F5F3DA;
+		}
         #login h1 a, .login h1 a {
 		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/chopped-feast-logo.png);
 		background-repeat: no-repeat;
         }
+		body.login div#login form#loginform p.submit input#wp-submit {
+			color: #F5F3DA;
+			background-color: #CF6A00;
+		}
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+add_action( 'login_enqueue_scripts', 'my_login_style' );
 
 /* Link to site using the logo */
 function my_login_logo_url() {
