@@ -279,3 +279,24 @@ function twd_remove_admin_links() {
 }
 add_action( 'admin_menu', 'twd_remove_admin_links' );
 
+/* Change the logo on the WordPress login page */
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/chopped-feast-logo.png);
+		background-repeat: no-repeat;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+/* Link to site using the logo */
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Chopped Feast Meal Delivery';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
