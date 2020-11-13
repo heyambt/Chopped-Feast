@@ -8,6 +8,9 @@
 .woocommerce .cart-collaterals .cart-totals table.shop_table.shop_table_responsive tr, 
 .woocommerce .cart-collaterals .cart-totals table.shop_table.shop_table_responsive td, 
 .woocommerce .cart-collaterals .cart-totals table.shop_table.shop_table_responsive th {
+  th, td {
+    text-align: center;
+  }
   .product-name {
     white-space: nowrap;
   }
