@@ -15,7 +15,7 @@ get_header();
 		<header class="page-header">
 				<h1><?php get_the_archive_title(); ?></h1>
 						
-		</header><!-- .page-header -->
+		</header>
 	<!-- drop down menu-->
 		<?php
 			$terms = get_terms( array(
@@ -90,7 +90,6 @@ get_header();
 		<section class="call-to-action">
 			<a href="<?php echo get_permalink(35);?>">See Plans</a>
 		</section>
-	</main><!-- #main -->
+	</main>
 <?php
-// get_sidebar();
 get_footer();
