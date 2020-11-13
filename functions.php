@@ -101,6 +101,11 @@ if ( ! function_exists( 'meal_delivery_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		// add editor styles
+		add_editor_style();
+		add_theme_support( 'editor-styles' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'meal_delivery_setup' );
@@ -273,3 +278,4 @@ function twd_remove_admin_links() {
 	}
 }
 add_action( 'admin_menu', 'twd_remove_admin_links' );
+
