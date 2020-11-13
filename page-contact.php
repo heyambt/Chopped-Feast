@@ -20,35 +20,57 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
 		
-	
-		
-	
+		?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
+
+	<?php meal_delivery_post_thumbnail(); ?>
+
+	<div class="entry-content">
+		<?php
+		the_content();
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'meal-delivery' ),
+				'after'  => '</div>',
+			)
+		);
+
 
 		$phone_number = get_field('phone_number');
 		$email = get_field('email') ;
-
-		
+		$mailing_address = get_field('mailing_address');
+		echo '<div class=info>';
+		echo '<h4>';
+		echo 'Phone : ';
+		echo '</br>';
 		echo $phone_number ;
+		echo '</h4>';
+		echo '<h4>';
+		echo 'Email : ';
 		echo '</br>';
 		echo $email ;
-	
-   
-    
-
+		echo '</h4>';
+		echo '<h4>';
+		echo 'Mailing Address : ';
+		echo '</br>';
+		echo $mailing_address;
+		echo '</h4>';
+		echo '</div>';
 		?>
+	</div><!-- .entry-content -->
+
+	</article>
+
+	<?php
+	endwhile; // End of the loop.
+	?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
