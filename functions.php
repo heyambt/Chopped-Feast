@@ -237,15 +237,9 @@ add_action( 'wp', 'remove_product_zoom_support', 100 );
 
 /* Customize the WYSIWYG Toolbar */
 function my_toolbars( $toolbars ) {
-	$toolbars['Very Simple' ] = array();
-	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
 
-	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
-	{
-	    unset( $toolbars['Full' ][2][$key] );
-	}
-	
-	unset( $toolbars['Basic' ] );
+	$toolbars['Very Simple' ] = array();
+	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline', 'link' );
 
 	return $toolbars;
 }
@@ -270,3 +264,12 @@ function custom_dashboard_help() {
 	echo '<p>Welcome to the dashboard! Please feel free add content to your website by creating new posts or pages. If you have any questions, contact the TWD 25 development team <a href="mailto:info@example.com">here</a></p>';
 }
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+/* Remove admin menu for non-admin users */
+function twd_remove_admin_links() {
+	if ( !current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'edit.php' );           // Remove Posts link
+    		remove_menu_page( 'edit-comments.php' );   // Remove Comments link
+	}
+}
+add_action( 'admin_menu', 'twd_remove_admin_links' );

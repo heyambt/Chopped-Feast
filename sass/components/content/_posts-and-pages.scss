@@ -20,3 +20,18 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.search-form {
+ margin: 30px;
+}
+.error-404 h1 {
+	font-size: 1em;
+	margin: 20px 10px;
+}
+
+@media screen and (min-width: 650px) {
+
+	.error-404 h1 {
+		font-size: 2em;
+
+	}
+}

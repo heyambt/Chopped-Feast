@@ -5,15 +5,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.site-branding img {
-    max-width: 120px;
+    svg {
+        fill: $beige;
+        cursor: pointer;
+    }
 }
 
-.site-branding a {
-    color: $beige;
-    font-size: 1.3em;
-}
+.site-branding {
+    img {
+        max-width: 120px;
+    }
+    a {
+        color: $beige;
+        font-size: 1.3em;
+    }
+ } 
 
 .site-title a {
     text-decoration: none;
@@ -46,7 +52,6 @@
         background-color: $olive;
         li {
             position: relative;
-            padding: 15px 0px;
             border: 1px solid $beige;
         }
         a {
@@ -55,17 +60,14 @@
             color: $beige;
             text-align: center;
             font-size: 1.1em;
+            padding: 15px;
             &:hover {
                 color: $dark_orange;
             }
         }
     }
 }
-svg {
-    fill: $beige;
-    cursor: pointer;
 
-}
 .nav-menu {
     display: flex;
     justify-content: space-between;

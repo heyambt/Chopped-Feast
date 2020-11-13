@@ -28,7 +28,16 @@ get_header();
 					endif;
 				endif;
 			?>
-			<a href="<?php echo get_permalink(35)?>">Order Now</a>
+			<div class="hero-text">
+				<h1><?php 
+					if (function_exists('get_field')) :
+						if (get_field('hero_text')) :
+							the_field('hero_text');
+						endif;
+					endif;
+				?></h1>
+				<a href="<?php echo get_permalink(35)?>">Order Now</a>
+			</div>
 		</section>
 
 		<section class="about-us">
@@ -52,7 +61,8 @@ get_header();
 									endif;
 
 									if (get_sub_field('text_guide')) : ?>
-										<p><?php the_sub_field('text_guide'); ?></p></div>
+										<p><?php the_sub_field('text_guide'); ?></p>
+										<p class="arrow">&rarr;</p></div>
 										<?php
 								endif;
 								endwhile;
@@ -63,25 +73,28 @@ get_header();
 			</div>
 		</section>
 
-		<section class="testimonials">
-			<?php
-				$args = array(
-					'post_type'      => 'md-testimonials',
-					'posts_per_page' => 4
-				);
+		<section class="testimonial-section">
+			<h2>Testimonials</h2>
+			<div class="testimonials">	
+				<?php
+					$args = array(
+						'post_type'      => 'md-testimonials',
+						'posts_per_page' => 4
+					);
 
-				$query = new WP_Query ( $args );
-				
-				if ( $query -> have_posts() ):
-					while ( $query -> have_posts() ) :
-						$query -> the_post();
-						the_content();
-					endwhile;
-					wp_reset_postdata();
-				endif; 
-			?>
+					$query = new WP_Query ( $args );
+					
+					if ( $query -> have_posts() ):
+						while ( $query -> have_posts() ) :
+							$query -> the_post();
+							the_content();
+						endwhile;
+						wp_reset_postdata();
+					endif; 
+				?>
+			</div>
 		</section>
-
+		
 		<section class="social-proof">
 			<h2>As Featured In</h2>
 			<?php 
