@@ -42,7 +42,7 @@ get_header();
 			<h2> <?php
 			echo $q; ?></h2>
 			<?php
-			echo '<br />';
+			
 			echo $a;
             
             endwhile;
