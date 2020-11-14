@@ -270,6 +270,19 @@ function custom_dashboard_help() {
 }
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 
+
+function client_documentation_widget() {
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('custom_client_widget', 'Documentation on adding content', 'client_documentation_help');
+}
+ 
+function client_documentation_help() {
+	echo '<p>How to add content to your website: <a href= "https://mealdelivery.bcitwebdeveloper.ca/wp-content/uploads/2020/11/Client-Documentation-Meal-Delivery.pdf">Content Documentation</a></p>';
+}
+add_action('wp_dashboard_setup', 'client_documentation_widget');
+
+
+
 /* Remove admin menu for non-admin users */
 function twd_remove_admin_links() {
 	if ( !current_user_can( 'manage_options' ) ) {
