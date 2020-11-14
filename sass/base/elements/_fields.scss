@@ -18,16 +18,24 @@ textarea {
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
 	padding: 3px;
-	margin: 8px 0;
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
 	// width: 100%;
-
+	
 	&:focus {
 		color: $color__text-input-focus;
 	}
 	
 }
 
+.u-column1.col-1, .u-column2.col-2 {
+	display: table;
+	width: 80%;
+	margin: 0 auto;
+	button.woocommerce-form-login__submit {
+		max-width: 350px;
+	}
+}
 select {
 	border: 1px solid $color__border-input;
 }
@@ -47,7 +55,6 @@ textarea {
 		width: 100%;
 	}
 	.woocommerce-form-row {
-		display: flex;
 		align-items: center;
 	}
 	.woocommerce-form-row label {
@@ -58,6 +65,8 @@ textarea {
 		width: 100%;
 	}
 	.u-columns {
+		max-width: 800px;
+		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
 	}
