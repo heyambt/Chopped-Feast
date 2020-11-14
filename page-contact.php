@@ -45,21 +45,33 @@ get_header();
 		$email = get_field('email') ;
 		$mailing_address = get_field('mailing_address');
 		echo '<div class=info>';
+		echo '<div class=phone>';
 		echo '<h4>';
 		echo 'Phone : ';
-		echo '</br>';
-		echo $phone_number ;
 		echo '</h4>';
+		echo '<p>';
+		echo $phone_number ;
+		echo '</p>';
+		echo '</div>';
+
+		echo '<div class=email>';
 		echo '<h4>';
 		echo 'Email : ';
-		echo '</br>';
-		echo $email ;
 		echo '</h4>';
+		echo '<p>';
+		echo $email ;
+		echo '</p>';
+		echo '</div>';
+
+
+		echo '<div class=address>';
 		echo '<h4>';
 		echo 'Mailing Address : ';
-		echo '</br>';
-		echo $mailing_address;
 		echo '</h4>';
+		echo '<p>';
+		echo $mailing_address;
+		echo '</p>';
+		echo '</div>';
 		echo '</div>';
 		?>
 	</div><!-- .entry-content -->
